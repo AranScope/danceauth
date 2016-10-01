@@ -33,6 +33,10 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket){
+	socket.on('message', function(message) {
+	
+		socket.emit('message', message);
+	});
 
 	socket.on('add-user', function(data) {
 		clients.set(username, new Client(data.username));
