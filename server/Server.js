@@ -1,19 +1,24 @@
+var express = require('express');
 var io = require('socket.io')();
-var Client = require('Client.js');
+var Client = require('./Client.js');
+
+var app = express();
 
 var auth_data = [];
-var clients = []
-
-var current_client;
+var clients = {};
 
 /*
 
 */
 
+app.get('/', function(req, res) {
+	res.send(clients);
+});
+
 io.on('connection', function(socket){
 
 	socket.on('add-user', function(data) {
-		clients.push(username: new Client(data.username));
+		clients.set(username, new Client(data.username));
 	});
 
 	socket.on('start-training', function(data) {
@@ -40,16 +45,11 @@ io.on('connection', function(socket){
 		clients[data.username].addAuth(data.skeleton);
 	});
 
-	socket.on('endauth', function(data) {
-		socket.emit('auth', {
-			loggedin: clients[data.username].auth();
-		});
-	});
-
 	socket.on('reset', function(username) {
 		clients[username].reset();
 	});
 
 });
 
-io.listen(3000);
+io.listen(3004);
+app.listen(3005);

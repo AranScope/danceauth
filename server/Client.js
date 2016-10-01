@@ -30,3 +30,5 @@ var addAuth = function(data) {
 var reset = function(data) {
 	
 }
+
+module.exports = Client;
