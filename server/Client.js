@@ -24,7 +24,11 @@ var stopAuth = function(data) {
 }
  
 var addAuth = function(data) {
-	
+	var i;
+        for(i in data) {
+        	var position = data[i].position;
+		            	
+        }	
 }
  
 var reset = function(data) {
