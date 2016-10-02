@@ -1,0 +1,83 @@
+body {
+    background-image: url("background.png");
+}
+
+body,
+a {
+    font-family: 'Arial', "PT Serif", Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    margin: 40px auto;
+
+    line-height: 1.6;
+    font-size: 20px;
+    color: #333;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+#left{
+	width: 20%;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #ccc;
+	float: left;
+	display: inline-block;
+}
+
+p {
+    color: #444;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+.move {
+	margin-bottom: 5px;
+}
+button,
+.button {
+    font-family: Arial;
+    border: none;
+    color: white;
+    background-color: #333;
+    padding: 10px 20px 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#auth {
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Lato;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+h1 {
+    font-size: 71px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 30px;
+}
