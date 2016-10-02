@@ -1,0 +1,89 @@
+* {
+    font-family: 'Lato', sans-serif;
+    transition: all .35s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+}
+
+.text-small {
+    font-weight: 100;
+    font-size: 3vh;
+}
+
+.container {
+    position: relative;
+
+}
+
+#sidebar {
+    position: absolute;
+    left: 0px;
+    width: 25vw;
+    height: 100vh;
+}
+
+.title {
+    height: 15vh !important;
+}
+
+.sidebar-block {
+    width: 100%;
+    height: 12vh;
+    background-color: #2C3E50;
+    color: #ffffff;
+    border-style: none;
+    font-size: 4vh;
+    padding-left: 3vh;
+    margin: 1px 0 1px 0;
+    text-align: left;
+}
+
+.sidebar-button:hover {
+    background-color: #FFB03B;
+    color: #fff;
+    padding-left: 2.5vw;
+}
+
+.sidebar-button:active, .sidebar:visited{
+    border-style: none;
+    border-width: none;
+    border: none;
+}
+
+#main {
+    margin-left: 25vw;
+    height: 100vh;
+    
+}
+
+body {
+    background-image: url('./geometry.png');
+}
+
+canvas {
+    margin: 10vh 0 0 5vw;
+    width: 55vw;
+    height: 80vh;
+    background-color: #eeeeee;
+    padding: none;
+}
+
+#timer-container {
+    background-color: #FFB03B;
+    color: #fff;
+    width: 10vw;
+    height: 10vw;
+    float: right;
+    margin-top: calc(50vh - 10vw/2);
+}
+
+#timer-container h1 {
+    font-size: 8vh;
+    text-align: center;
+    
+}
