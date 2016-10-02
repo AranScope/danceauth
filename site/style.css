@@ -31,6 +31,10 @@ h4 {
     height: 15vh !important;
 }
 
+.subtitle{
+    height: 12vh !important;
+}
+
 .sidebar-block {
     width: 100%;
     height: 12vh;
@@ -61,6 +65,13 @@ h4 {
     
 }
 
+#options .sidebar-block{
+    background-color: #4E5F72
+}
+#options .text-small {
+    font-weight: 700;
+}
+
 body {
     background-image: url('./geometry.png');
 }
@@ -74,7 +85,7 @@ canvas {
 }
 
 #timer-container {
-    background-color: #FFB03B;
+    background-color: #2C3E50;
     color: #fff;
     width: 10vw;
     height: 10vw;

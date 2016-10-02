@@ -2,7 +2,7 @@ function drawCircle(x, y) {
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
 		ctx.beginPath();
-		ctx.fillStyle = "red";
+		ctx.fillStyle = "#FFB03B";
 		ctx.arc(x,y,7,0,2*Math.PI);//center x, center y, size,  start angle, end angle
 		ctx.fill();
 }

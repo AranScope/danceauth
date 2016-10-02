@@ -44,7 +44,22 @@ $(function() {
     socket.on('auth', function(data) {
 
       console.log(data.successful);
-      alert(data.move + ":  " + data.successful);
+
+      var message = data.successful ? {type: "success", msg: "Authorised with move " + data.move} : {type: "warning", msg: "Unauthorised, closest move was the " + data.move};
+      
+      swal({
+      title: "Authorisation",
+      text: message.msg,
+      type: message.type,
+      showCancelButton: false,
+      closeOnConfirm: true,
+      animation: "fade",
+      confirmButtonColor: "#FFB03B"
+
+    });
+
+
+
     
     });
 

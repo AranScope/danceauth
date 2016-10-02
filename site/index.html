@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="./animate.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./sweetalert.css">
 </head>
 
 <body>
     <div id="container">
         <div id="sidebar">
             <div id="title">
-                <button id="addmove" class="sidebar-block title">
+                <button class="sidebar-block title">
                 <b>DanceAuth</b><br><span class="text-small">You and me.</span>
                 </button>
                 <button id="addmove" class="sidebar-block sidebar-button">
@@ -27,24 +29,15 @@
                 </button>
             </div>
             <div id="options">
- 
-                <button id="addmove" class="sidebar-block">
+                <button class="sidebar-block">
                 <span class="text-small"><b>YOUR AUTHS</b></span>
                 </button>
-
-                 <button id="addmove" class="sidebar-block sidebar-button">
-                <span class="text-small">Running man</span>
-                </button>
-                
-            </div>
-            <div id="subtitle">
-                <h3>your moves:</h3>
             </div>
             <div id="auths">
             </div>
         </div>
         <div id="main">
-            <canvas id="myCanvas"></canvas>
+            <canvas id="myCanvas" width="800" height="600"></canvas>
             <div id="timer-container">
             	<h1 id="timer">3</h1>
             </div>
@@ -52,10 +45,13 @@
     </div>
     <script type="text/javascript" src="./zig.js"></script>
     <script type="text/javascript" src="./drawCircle.js"></script>
+    <script type="text/javascript" src="./drawLine.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script type="text/javascript" src="./sockets.js"></script>
     <script type="text/javascript" src="./kinect.js"></script>
     <script type="text/javascript" src="./presses.js"></script>
+    <script src="./sweetalert.min.js"></script>
+
 </body>
 
 </html>
