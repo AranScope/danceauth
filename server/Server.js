@@ -33,43 +33,33 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket){
+
 	socket.on('message', function(message) {
-	
-		socket.emit('message', message);
+		console.log('message');
+		console.log(message);
+		if(message == "STOP_AUTH") {
+			socket.emit('auth', clients['dab'].is_auth());
+		} else if(message = "STOP_TRAIN") {
+			console.log(clients['dab'].moves);
+		}
 	});
 
-	socket.on('add-user', function(data) {
-		clients.set(username, new Client(data.username));
-	});
-
-	socket.on('start-training', function(data) {
-		clients[data.username].start-training();
-	});
-
-	socket.on('stop-training', function(data) {
-		clients[data.username].stopTraining();
-	});
-
-	socket.on('add-training', function(data) {
-		clients[data.username].addTraining(data.skeleton);
+	socket.on('training', function(data) {
+		console.log('training');
+		if(!clients.hasOwnProperty(data.username)) {
+			clients[data.username] = new Client(data.username);	
+		} 
+		clients[data.username].train(data);
 	});
 	
-	socket.on('start-auth', function(data) {
-		clients[data.username].startAuth();
+	socket.on('auth', function(data) {
+		clients[data.username].auth(data);
 	});
-
-	socket.on('stop-auth', function(data) {
-		clients[data.username].stopAuth();
+	
+	socket.on('delete', function(data) {
+		console.log('delete');
+		//clients[data.username].delete(data);;
 	});
-
-	socket.on('add-auth', function(data){
-		clients[data.username].addAuth(data.skeleton);
-	});
-
-	socket.on('reset', function(username) {
-		clients[username].reset();
-	});
-
 });
 
 io.listen(3004);
