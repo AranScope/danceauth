@@ -21,23 +21,27 @@ Client.prototype.auth = function(data) {
 Client.prototype.is_auth = function() {
 	var best_diff = 10000000;
 	var best_move = "";
-		
+	var dist = 0;
+
 	for(move_key in this.moves) {
 		var move = this.moves[move_key];
 		var diff = 0;
 
 		for(index = 0; index < move.length; index++) {
 			for(partindex in move[index]) {
+				if(move.hasOwnProperty(index) && this.authmove.hasOwnProperty(index)) {
 				var skel1 = move[index];
 				var skel2 = this.authmove[index];
-				if(skel1.hasOwnProperty(index) && skel2.hasOwnProperty(index)) {
+				if(skel1.hasOwnProperty(partindex) && skel2.hasOwnProperty(partindex)) {
 					var part1 = skel1[partindex];
 					var part2 = skel2[partindex];
+					dist = part1.position[2];
 					//console.log('skel1: ' + JSON.stringify(skel1));
 					//console.log('skel2: ' + JSON.stringify(skel2));
 					// diff stuff
 					diff += Math.sqrt(Math.pow(part2.position[0] - part1.position[0], 2) + Math.pow(part2.position[1] - part1.position[1], 2));
-				}			
+				}
+				}
 			}
 		}
 
@@ -50,10 +54,10 @@ Client.prototype.is_auth = function() {
 	console.log('best_diff: ' + best_diff);
 	console.log('best_move: ' + best_move);
 	this.authmove = [];
-	console.log('threshold: ' + (max-min)/2);	
+	console.log('threshold: ' + 3.5 * ((max-min)/2));
 	return {
 		move: best_move,
-		successful: (best_diff < 1.1*(max-min)/2)
+		successful: best_diff < 3.5 * ((max-min)/2)
 	};
 }
 
@@ -61,4 +65,3 @@ Client.prototype.delete = function(data) {
 }
 
 module.exports = Client;
-

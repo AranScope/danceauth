@@ -40,7 +40,7 @@ io.on('connection', function(socket){
 		if(message == "STOP_AUTH") {
 			socket.emit('auth', clients['dab'].is_auth());
 		} else if(message = "STOP_TRAIN") {
-			console.log(clients['dab'].moves);
+			//console.log(clients['dab'].moves);
 		}
 	});
 
@@ -53,6 +53,7 @@ io.on('connection', function(socket){
 	});
 	
 	socket.on('auth', function(data) {
+		console.log('auth');
 		clients[data.username].auth(data);
 	});
 	
